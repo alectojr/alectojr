@@ -7,30 +7,22 @@ sex=str(input("enter your gender"))
 print("your gender is",sex)
 # The code checks the user's gender and age to determine which courses they are eligible for. It then prompts the user to choose a course and enroll for a specific duration. If the user is not eligible for any courses based on their age
 senior_courses=("Basketball", "football", "AI", "machine learning", "Cuisine", "Baking", "Cuisine")
-senior_time=("3 years", "5 years")
+senior_time=("3 years") 
 junior_courses=("Music Producing", "Instrumentals", "Singing", "Painting", "Drawing","None")
 junior_time="1 year"
-if sex=="male" or sex=="female" and age>18:
-        print("You are eligible for the following courses:", senior_courses)
-        course_choice=input("Please choose a course from the above options:")
-        if course_choice in senior_courses:
-            print("You have successfully enrolled in", course_choice, "for a duration of", senior_time)
-        if course_choice not in senior_courses:
-            print("Invalid course choice. Please select a valid course.")
-          
-if sex=="male" or sex=="female" and age<=18:
-         print("You are eligible for the following courses:", junior_courses)
-course_choice=input("Please choose a course from the above options:")
-if course_choice in junior_courses:
-            print("You have successfully enrolled in", course_choice, "for a duration of", junior_time) 
-else:            print("Invalid course choice. Please select a valid course.")
 
-
-
-            
-
-      
-
+if (sex=="male" or sex=="female") and age>18:
+     print("You are eligible for the following courses:", senior_courses)
+elif (sex=="male" or sex=="female") and age<=18:
+     print("You are eligible for the following courses:", junior_courses)
+else:
+     print("Sorry, you are not eligible for any courses based on your age.");exit()
+course_choice=input("Enter the course you want to enroll in:")
+if course_choice in senior_courses and age>18:
+     print("You have successfully enrolled in", course_choice, "for", senior_time)
+elif course_choice in junior_courses and age<=18:
+     print("You have successfully enrolled in", course_choice, "for", junior_time)
+else:     print("Sorry, you are not eligible to enroll in this course based on your age.")
 
 
 
